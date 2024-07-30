@@ -9,21 +9,32 @@
 /* Begin PBXBuildFile section */
 		C92227682C5908BC00E7D17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92227672C5908BC00E7D17F /* AppDelegate.swift */; };
 		C922276A2C5908BC00E7D17F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92227692C5908BC00E7D17F /* SceneDelegate.swift */; };
-		C922276C2C5908BC00E7D17F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922276B2C5908BC00E7D17F /* ViewController.swift */; };
-		C92227722C5908BC00E7D17F /* Day1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C92227702C5908BC00E7D17F /* Day1.xcdatamodeld */; };
+		C922276C2C5908BC00E7D17F /* SimplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922276B2C5908BC00E7D17F /* SimplePickerViewController.swift */; };
 		C92227742C5908BC00E7D17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92227732C5908BC00E7D17F /* Assets.xcassets */; };
 		C92227772C5908BC00E7D17F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C92227762C5908BC00E7D17F /* Base */; };
+		C92227802C590A4900E7D17F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C922277F2C590A4900E7D17F /* RxCocoa */; };
+		C92227822C590A4900E7D17F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C92227812C590A4900E7D17F /* RxSwift */; };
+		C92227852C590A5A00E7D17F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C92227842C590A5A00E7D17F /* SnapKit */; };
+		C92227872C590F5900E7D17F /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92227862C590F5900E7D17F /* SimpleTableViewController.swift */; };
+		C922278A2C59115200E7D17F /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92227892C59115200E7D17F /* SwitchViewController.swift */; };
+		C922278C2C59122C00E7D17F /* SimpleTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922278B2C59122C00E7D17F /* SimpleTextFieldViewController.swift */; };
+		C92227902C59216400E7D17F /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922278F2C59216400E7D17F /* UIViewController+.swift */; };
+		C92227932C59277A00E7D17F /* OperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92227922C59277A00E7D17F /* OperatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C92227642C5908BC00E7D17F /* Day1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Day1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92227672C5908BC00E7D17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C92227692C5908BC00E7D17F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C922276B2C5908BC00E7D17F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C92227712C5908BC00E7D17F /* Day1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Day1.xcdatamodel; sourceTree = "<group>"; };
+		C922276B2C5908BC00E7D17F /* SimplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewController.swift; sourceTree = "<group>"; };
 		C92227732C5908BC00E7D17F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C92227762C5908BC00E7D17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C92227782C5908BC00E7D17F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C92227862C590F5900E7D17F /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		C92227892C59115200E7D17F /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		C922278B2C59122C00E7D17F /* SimpleTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewController.swift; sourceTree = "<group>"; };
+		C922278F2C59216400E7D17F /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		C92227922C59277A00E7D17F /* OperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92227852C590A5A00E7D17F /* SnapKit in Frameworks */,
+				C92227822C590A4900E7D17F /* RxSwift in Frameworks */,
+				C92227802C590A4900E7D17F /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +70,35 @@
 		C92227662C5908BC00E7D17F /* Day1 */ = {
 			isa = PBXGroup;
 			children = (
+				C92227912C59276000E7D17F /* Operator */,
+				C92227882C59114000E7D17F /* UIComponent */,
 				C92227672C5908BC00E7D17F /* AppDelegate.swift */,
 				C92227692C5908BC00E7D17F /* SceneDelegate.swift */,
-				C922276B2C5908BC00E7D17F /* ViewController.swift */,
+				C922278F2C59216400E7D17F /* UIViewController+.swift */,
 				C92227732C5908BC00E7D17F /* Assets.xcassets */,
 				C92227752C5908BC00E7D17F /* LaunchScreen.storyboard */,
 				C92227782C5908BC00E7D17F /* Info.plist */,
-				C92227702C5908BC00E7D17F /* Day1.xcdatamodeld */,
 			);
 			path = Day1;
+			sourceTree = "<group>";
+		};
+		C92227882C59114000E7D17F /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C922276B2C5908BC00E7D17F /* SimplePickerViewController.swift */,
+				C92227862C590F5900E7D17F /* SimpleTableViewController.swift */,
+				C92227892C59115200E7D17F /* SwitchViewController.swift */,
+				C922278B2C59122C00E7D17F /* SimpleTextFieldViewController.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		C92227912C59276000E7D17F /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				C92227922C59277A00E7D17F /* OperatorViewController.swift */,
+			);
+			path = Operator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +117,11 @@
 			dependencies = (
 			);
 			name = Day1;
+			packageProductDependencies = (
+				C922277F2C590A4900E7D17F /* RxCocoa */,
+				C92227812C590A4900E7D17F /* RxSwift */,
+				C92227842C590A5A00E7D17F /* SnapKit */,
+			);
 			productName = Day1;
 			productReference = C92227642C5908BC00E7D17F /* Day1.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +150,10 @@
 				Base,
 			);
 			mainGroup = C922275B2C5908BC00E7D17F;
+			packageReferences = (
+				C922277E2C590A4900E7D17F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C92227832C590A5A00E7D17F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C92227652C5908BC00E7D17F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,10 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92227722C5908BC00E7D17F /* Day1.xcdatamodeld in Sources */,
-				C922276C2C5908BC00E7D17F /* ViewController.swift in Sources */,
+				C92227902C59216400E7D17F /* UIViewController+.swift in Sources */,
+				C922276C2C5908BC00E7D17F /* SimplePickerViewController.swift in Sources */,
+				C92227932C59277A00E7D17F /* OperatorViewController.swift in Sources */,
 				C92227682C5908BC00E7D17F /* AppDelegate.swift in Sources */,
+				C922278A2C59115200E7D17F /* SwitchViewController.swift in Sources */,
 				C922276A2C5908BC00E7D17F /* SceneDelegate.swift in Sources */,
+				C922278C2C59122C00E7D17F /* SimpleTextFieldViewController.swift in Sources */,
+				C92227872C590F5900E7D17F /* SimpleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,18 +407,42 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		C92227702C5908BC00E7D17F /* Day1.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C92227712C5908BC00E7D17F /* Day1.xcdatamodel */,
-			);
-			currentVersion = C92227712C5908BC00E7D17F /* Day1.xcdatamodel */;
-			path = Day1.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		C922277E2C590A4900E7D17F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
 		};
-/* End XCVersionGroup section */
+		C92227832C590A5A00E7D17F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C922277F2C590A4900E7D17F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C922277E2C590A4900E7D17F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C92227812C590A4900E7D17F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C922277E2C590A4900E7D17F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C92227842C590A5A00E7D17F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C92227832C590A5A00E7D17F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C922275C2C5908BC00E7D17F /* Project object */;
 }
