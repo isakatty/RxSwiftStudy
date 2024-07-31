@@ -8,6 +8,11 @@
 import UIKit
 
 extension UIViewController {
+    
+    var safeArea: UILayoutGuide {
+        return view.safeAreaLayoutGuide
+    }
+    
     func showAlert() {
         
     }

@@ -20,6 +20,7 @@
 		C922278C2C59122C00E7D17F /* SimpleTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922278B2C59122C00E7D17F /* SimpleTextFieldViewController.swift */; };
 		C92227902C59216400E7D17F /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922278F2C59216400E7D17F /* UIViewController+.swift */; };
 		C92227932C59277A00E7D17F /* OperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92227922C59277A00E7D17F /* OperatorViewController.swift */; };
+		C9AE982D2C5A58AC0024DB1E /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE982C2C5A58AC0024DB1E /* NumbersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		C922278B2C59122C00E7D17F /* SimpleTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewController.swift; sourceTree = "<group>"; };
 		C922278F2C59216400E7D17F /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		C92227922C59277A00E7D17F /* OperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorViewController.swift; sourceTree = "<group>"; };
+		C9AE982C2C5A58AC0024DB1E /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				C92227862C590F5900E7D17F /* SimpleTableViewController.swift */,
 				C92227892C59115200E7D17F /* SwitchViewController.swift */,
 				C922278B2C59122C00E7D17F /* SimpleTextFieldViewController.swift */,
+				C9AE982C2C5A58AC0024DB1E /* NumbersViewController.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AE982D2C5A58AC0024DB1E /* NumbersViewController.swift in Sources */,
 				C92227902C59216400E7D17F /* UIViewController+.swift in Sources */,
 				C922276C2C5908BC00E7D17F /* SimplePickerViewController.swift in Sources */,
 				C92227932C59277A00E7D17F /* OperatorViewController.swift in Sources */,
