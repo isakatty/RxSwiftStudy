@@ -62,7 +62,10 @@ class PhoneViewController: UIViewController {
         phoneTextField.keyboardType = .numberPad
         
         let validation = phoneTextField.rx.text.orEmpty
-            .map { $0.count >= 10 }
+            .map {
+                let isNumber = $0.allSatisfy { $0.isNumber }
+                return isNumber && $0.count >= 10
+            }
         
         numberText
             .bind(with: self) { owner, number in
