@@ -130,7 +130,7 @@ class BirthdayViewController: UIViewController {
                 // datePicker의 date
                 
                 owner.validation.accept(owner.calculateAge(pickedDate: components))
-                print(owner.calculateAges(pickedDate: components))
+                print(owner.calculateAges(pickedDate: date))
             }
             .disposed(by: disposeBag)
         yearData
@@ -203,6 +203,25 @@ class BirthdayViewController: UIViewController {
             return false
         } else {
             return true
+        }
+    }
+    
+    // date랑 Calendar를 활용한.
+    private func calculateAges(pickedDate: Date) -> Bool {
+        let calendar = Calendar.current
+        let today = Date()
+        
+        let ageComponents = calendar.dateComponents([.year, .month, .day], from: pickedDate, to: today)
+        
+        guard let age = ageComponents.year else {
+            return false
+        }
+        
+        let birthDateThisYear = calendar.date(byAdding: .year, value: age, to: pickedDate)!
+        if birthDateThisYear > today {
+            return (age - 1) >= 17
+        } else {
+            return age >= 17
         }
     }
 }
