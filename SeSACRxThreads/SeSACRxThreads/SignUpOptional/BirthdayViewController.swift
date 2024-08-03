@@ -130,6 +130,7 @@ class BirthdayViewController: UIViewController {
                 // datePicker의 date
                 
                 owner.validation.accept(owner.calculateAge(pickedDate: components))
+                print(owner.calculateAges(pickedDate: components))
             }
             .disposed(by: disposeBag)
         yearData
@@ -196,15 +197,14 @@ class BirthdayViewController: UIViewController {
         
         if stdYear - pickedYear < 17 {
             return false
-        } else if stdYear - pickedYear == 17 && stdMonth > pickedMonth {
+        } else if stdYear - pickedYear == 17 && stdMonth < pickedMonth {
             return false
-        } else if stdYear - pickedYear == 17 && stdMonth == pickedMonth && stdDay > pickedDay {
+        } else if stdYear - pickedYear == 17 && stdMonth == pickedMonth && stdDay < pickedDay {
             return false
         } else {
             return true
         }
     }
-    
 }
 
 extension UIViewController {
