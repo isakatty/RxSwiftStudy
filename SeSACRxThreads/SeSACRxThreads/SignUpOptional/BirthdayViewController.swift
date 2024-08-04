@@ -227,6 +227,9 @@ class BirthdayViewController: UIViewController {
 }
 
 extension UIViewController {
+    var safeArea: UILayoutGuide {
+        return view.safeAreaLayoutGuide
+    }
     func showAlert(
         title: String,
         message: String,
