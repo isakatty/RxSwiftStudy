@@ -18,28 +18,20 @@ import SnapKit
  */
 
 class PasswordViewController: UIViewController {
+    private let viewModel = PasswordViewModel()
     private let disposeBag = DisposeBag()
+    
     let passwordTextField = SignTextField(placeholderText: "비밀번호를 입력해주세요")
     let nextButton = PointButton(title: "다음")
-    
     let descriptionLabel = UILabel()
-    let validText = Observable.just("8자 이상 입력해주세요.")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = Color.white
         
+        view.backgroundColor = Color.white
         configureLayout()
-         
-//        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-        bindData()
+        bind()
     }
-    
-    @objc func nextButtonClicked() {
-        navigationController?.pushViewController(PhoneViewController(), animated: true)
-    }
-    
     func configureLayout() {
         view.addSubview(passwordTextField)
         view.addSubview(nextButton)
@@ -63,28 +55,28 @@ class PasswordViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-    
-    private func bindData() {
-        // text 전달
-        validText
+    private func bind() {
+        let input = PasswordViewModel.Input(
+            nextBtnTap: nextButton.rx.tap.asObservable(),
+            textFieldText: passwordTextField.rx.text
+        )
+        let output = viewModel.transform(input: input)
+        
+        output.validText
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
         
-        let validation = passwordTextField.rx.text.orEmpty
-            .map { $0.count >= 8 }
-        
-        validation
-            .bind(to: nextButton.rx.isEnabled, descriptionLabel.rx.isHidden)
-            .disposed(by: disposeBag)
-        
-        validation
+        output.validation
             .bind(with: self) { owner, value in
                 let color: UIColor = value ? .systemPink : .lightGray
                 owner.nextButton.backgroundColor = color
             }
             .disposed(by: disposeBag)
+        output.validation
+            .bind(to: nextButton.rx.isEnabled, descriptionLabel.rx.isHidden)
+            .disposed(by: disposeBag)
         
-        nextButton.rx.tap
+        output.nextBtnTap
             .bind(with: self) { owner, _ in
                 owner.navigationController?.pushViewController(PhoneViewController(), animated: true)
             }
