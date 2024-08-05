@@ -15,8 +15,6 @@ final class TodoListCell: UITableViewCell {
     static let id = "TodoListCell"
     
     var disposeBag = DisposeBag()
-    let isChecked = BehaviorRelay(value: false)
-    let isHighPriority = BehaviorRelay(value: false)
     
     lazy var checkBtn: UIButton = {
         let btn = UIButton()

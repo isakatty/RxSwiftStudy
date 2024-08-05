@@ -31,6 +31,8 @@
 		04F6DBFE2C5B0C0300667F4D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */; };
 		04F6DC002C5B0C2200667F4D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */; };
 		04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DC012C5B0D8200667F4D /* DetailViewController.swift */; };
+		C92284E12C609CD5008861CD /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92284E02C609CD5008861CD /* ShoppingViewModel.swift */; };
+		C92284E32C609CDF008861CD /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92284E22C609CDF008861CD /* ViewModelType.swift */; };
 		C9FEFA8C2C5E9C7E00BE2E28 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEFA8B2C5E9C7E00BE2E28 /* ShoppingTableViewController.swift */; };
 		C9FEFA8E2C5E9D0600BE2E28 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEFA8D2C5E9D0600BE2E28 /* ToDoList.swift */; };
 		C9FEFA902C5FA87900BE2E28 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEFA8F2C5FA87900BE2E28 /* TodoListCell.swift */; };
@@ -81,6 +83,8 @@
 		04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		04F6DC012C5B0D8200667F4D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C92284E02C609CD5008861CD /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
+		C92284E22C609CDF008861CD /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		C9FEFA8B2C5E9C7E00BE2E28 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		C9FEFA8D2C5E9D0600BE2E28 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		C9FEFA8F2C5FA87900BE2E28 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				0412802E2AEF9BAC00972552 /* LaunchScreen.storyboard */,
 				041280312AEF9BAC00972552 /* Info.plist */,
 				041280772AF1D14000972552 /* Resource.swift */,
+				C92284E22C609CDF008861CD /* ViewModelType.swift */,
 			);
 			path = SeSACRxThreads;
 			sourceTree = "<group>";
@@ -220,14 +225,39 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		C9FEFA8A2C5E9C7200BE2E28 /* ShoppingTableView */ = {
+		C92284DF2C609CCC008861CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C92284E02C609CD5008861CD /* ShoppingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C92284E42C60AD21008861CD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				C9FEFA8B2C5E9C7E00BE2E28 /* ShoppingTableViewController.swift */,
-				C9FEFA8D2C5E9D0600BE2E28 /* ToDoList.swift */,
-				C9FEFA8F2C5FA87900BE2E28 /* TodoListCell.swift */,
 				C9FEFA912C5FCF0700BE2E28 /* ToDoListDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C92284E52C60AD27008861CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9FEFA8F2C5FA87900BE2E28 /* TodoListCell.swift */,
 				C9FEFA942C5FD15500BE2E28 /* TodoListAddView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9FEFA8A2C5E9C7200BE2E28 /* ShoppingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C9FEFA8D2C5E9D0600BE2E28 /* ToDoList.swift */,
+				C92284E52C60AD27008861CD /* View */,
+				C92284E42C60AD21008861CD /* ViewController */,
+				C92284DF2C609CCC008861CD /* ViewModel */,
 			);
 			path = ShoppingTableView;
 			sourceTree = "<group>";
@@ -379,8 +409,10 @@
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				C9FEFA922C5FCF0700BE2E28 /* ToDoListDetailViewController.swift in Sources */,
+				C92284E12C609CD5008861CD /* ShoppingViewModel.swift in Sources */,
 				C9FEFA8C2C5E9C7E00BE2E28 /* ShoppingTableViewController.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				C92284E32C609CDF008861CD /* ViewModelType.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,

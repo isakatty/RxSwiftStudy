@@ -12,7 +12,7 @@ import RxCocoa
 import SnapKit
 
 final class ShoppingTableViewController: UIViewController {
-    private let todoList = BehaviorRelay(value: mockList)
+    private let viewModel = ShoppingViewModel()
     
     private let disposeBag = DisposeBag()
     private lazy var tableView: UITableView = {
@@ -28,7 +28,7 @@ final class ShoppingTableViewController: UIViewController {
         
         configureHierarchy()
         configureLayout()
-        bindData()
+        bind()
     }
     
     private func configureHierarchy() {
@@ -50,45 +50,41 @@ final class ShoppingTableViewController: UIViewController {
         }
         
     }
-    private func bindData() {
+    private func bind() {
+        let input = ShoppingViewModel.Input(
+            shoppingListText: addView.textField.rx.text,
+            checkBtnTap: PublishRelay<Int>(),
+            starBtnTap: PublishRelay<Int>(),
+            addBtnTap: PublishRelay<Void>(),
+            cellTap: tableView.rx.itemSelected.asObservable()
+        )
+        let output = viewModel.transform(input: input)
+        
         addView.addBtn.rx.tap
-            .withLatestFrom(addView.textField.rx.text.orEmpty)
-            .bind(with: self) { owner, text in
-                let newTodo = ToDoList(title: text, isFinished: false, highPriority: false)
-                mockList.insert(newTodo, at: 0)
-                owner.todoList.accept(mockList)
-            }
+            .bind(to: input.addBtnTap)
             .disposed(by: disposeBag)
         
-        
-        todoList
+        output.shoppingList
             .bind(to: tableView.rx.items(
-                    cellIdentifier: TodoListCell.id,
-                    cellType: TodoListCell.self
-                )
+                cellIdentifier: TodoListCell.id,
+                cellType: TodoListCell.self)
             ) { row, element, cell in
-                cell.configureUI(todo: element)
                 
+                cell.configureUI(todo: element)
                 cell.checkBtn.rx.tap
-                    .bind(with: self, onNext: { owner, _ in
-                        var newTodoList = owner.todoList.value
-                        newTodoList[row].isFinished.toggle()
-                        owner.todoList.accept(newTodoList)
-                    })
+                    .map { row }
+                    .bind(to: input.checkBtnTap)
                     .disposed(by: cell.disposeBag)
                 cell.starBtn.rx.tap
-                    .bind(with: self, onNext: { owner, _ in
-                        var newTodoList = owner.todoList.value
-                        newTodoList[row].highPriority.toggle()
-                        owner.todoList.accept(newTodoList)
-                    })
+                    .map { row }
+                    .bind(to: input.starBtnTap)
                     .disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected
+        output.cellTap
             .bind(with: self) { owner, index in
                 let vc = ToDoListDetailViewController()
+                vc.navigationItem.title = output.shoppingList.value[index.row].title
                 owner.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
