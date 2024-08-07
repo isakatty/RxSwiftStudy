@@ -22,7 +22,5 @@ final class ToDoListDetailViewController: UIViewController {
     }
     private func configureLayout() {
         view.backgroundColor = .systemPink
-        let safeArea = view.safeAreaLayoutGuide
-        
     }
 }

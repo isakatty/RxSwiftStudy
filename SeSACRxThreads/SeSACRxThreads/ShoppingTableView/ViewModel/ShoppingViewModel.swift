@@ -12,8 +12,15 @@ import RxCocoa
 
 final class ShoppingViewModel: ViewModelType {
     private var disposeBag = DisposeBag()
+    private var collectionShoppingList = ["키보드", "맥북", "에어팟", "베이스 기타", "앰프", "마우스", "CDP"]
+    
     func transform(input: Input) -> Output {
         let todoList = BehaviorRelay(value: mockList)
+        let output = Output(
+            collectionList: BehaviorSubject<[String]>(value: collectionShoppingList),
+            shoppingList: todoList,
+            cellTap: input.cellTap
+        )
         
         input.addBtnTap
             .withLatestFrom(input.shoppingListText.orEmpty)
@@ -38,11 +45,15 @@ final class ShoppingViewModel: ViewModelType {
                 todoList.accept(newTodoList)
             }
             .disposed(by: disposeBag)
+        input.selectedText
+            .subscribe(with: self) { owner, value in
+                let newTodo = ToDoList(title: value, isFinished: false, highPriority: false)
+                mockList.insert(newTodo, at: 0)
+                todoList.accept(mockList)
+            }
+            .disposed(by: disposeBag)
         
-        return Output(
-            shoppingList: todoList,
-            cellTap: input.cellTap
-        )
+        return output
     }
     
     struct Input {
@@ -51,8 +62,10 @@ final class ShoppingViewModel: ViewModelType {
         let starBtnTap: PublishRelay<Int>
         let addBtnTap: PublishRelay<Void>
         let cellTap: Observable<IndexPath>
+        let selectedText: PublishSubject<String>
     }
     struct Output {
+        let collectionList: BehaviorSubject<[String]>
         let shoppingList: BehaviorRelay<[ToDoList]>
         let cellTap: Observable<IndexPath>
     }
