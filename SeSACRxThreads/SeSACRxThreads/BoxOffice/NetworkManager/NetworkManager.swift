@@ -17,13 +17,12 @@ enum NetworkError: Error, LocalizedError {
 }
 
 final class NetworkManager {
-    private let APIKey = ""
+    private let APIKey: String = Bundle.main.object(forInfoDictionaryKey: "MOVIE_API_KEY") as? String ?? ""
     
     static let shared = NetworkManager()
     private init() { }
     
     func callMovie(dateString: String) -> Observable<Movie> {
-        
         let urlString = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey)&targetDt=\(dateString)"
         
         return Observable.create { observer in

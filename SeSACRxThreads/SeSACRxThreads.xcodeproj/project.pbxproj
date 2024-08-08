@@ -99,6 +99,7 @@
 		C9EDF76A2C64C654003A1BDD /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		C9EDF76C2C64CB14003A1BDD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C9EDF7702C64CD46003A1BDD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C9EDF7722C64D85B003A1BDD /* XCConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XCConfig.xcconfig; sourceTree = "<group>"; };
 		C9FEFA8B2C5E9C7E00BE2E28 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		C9FEFA8D2C5E9D0600BE2E28 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		C9FEFA8F2C5FA87900BE2E28 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		041280172AEF9BAB00972552 = {
 			isa = PBXGroup;
 			children = (
+				C9EDF7722C64D85B003A1BDD /* XCConfig.xcconfig */,
 				041280222AEF9BAB00972552 /* SeSACRxThreads */,
 				041280392AEF9BAC00972552 /* SeSACRxThreadsTests */,
 				041280432AEF9BAC00972552 /* SeSACRxThreadsUITests */,
@@ -573,6 +575,7 @@
 /* Begin XCBuildConfiguration section */
 		041280482AEF9BAC00972552 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9EDF7722C64D85B003A1BDD /* XCConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -692,6 +695,7 @@
 		};
 		0412804B2AEF9BAC00972552 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9EDF7722C64D85B003A1BDD /* XCConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
